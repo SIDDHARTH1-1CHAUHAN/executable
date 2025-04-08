@@ -34,7 +34,6 @@ st.markdown("""
 def get_available_com_ports():
     """
     Scans and returns available COM ports
-    Author: SIDDHARTH CHAUHAN
     """
     import serial.tools.list_ports
     return [port.device for port in serial.tools.list_ports.comports()]
@@ -53,7 +52,6 @@ hardware_connected = False
 def initialize_serial_connection():
     """
     Initializes the serial connection to Arduino
-    Author: SIDDHARTH CHAUHAN
     """
     global ser, hardware_connected
     try:
@@ -172,7 +170,6 @@ mode = st.sidebar.radio("Mode Selection", ["🔴 Hardware Mode", "🟢 Simulatio
 def send_arduino_command(gate_type, inputs, pins=None):
     """
     Sends command to Arduino for logic gate operations
-    Author: SIDDHARTH CHAUHAN
     
     Args:
         gate_type (str): Type of logic gate (AND, OR, etc.)
@@ -218,7 +215,6 @@ def send_arduino_command(gate_type, inputs, pins=None):
 def test_arduino_connection():
     """
     Tests the Arduino connection by sending a ping command
-    Author: SIDDHARTH CHAUHAN
     
     Returns:
         bool: True if connection successful, False otherwise
@@ -241,7 +237,6 @@ def test_arduino_connection():
 def log_data(inputs, outputs, experiment_name):
     """
     Logs experiment data with dynamic inputs/outputs
-    Author: SIDDHARTH CHAUHAN
     """
     entry = {**inputs, **outputs, "Experiment": experiment_name, "Timestamp": pd.Timestamp.now()}
     st.session_state.history_data.append(entry)
@@ -312,8 +307,8 @@ def basic_logic_gate_simulator(gate_name):
     st.info(gate_descriptions.get(gate_name.split()[0], ""))
     
     # Display gate diagram
-    logic_image_path = f"{gate_name.split()[0].lower()}.png"
-    ic_image_path = f"ics/{gate_name.split()[0].lower()}.png"
+    logic_image_path = f"images/{gate_name.split()[0].lower()}.png"
+    ic_image_path = f"images/ics/{gate_name.split()[0].lower()}.png"
 
     col1, col2 = st.columns(2)
     with col1:
@@ -520,7 +515,6 @@ else:
 
 # Add footer
 st.markdown("---")
-st.markdown("### Digital Logic Lab Simulator - Developed by SIDDHARTH CHAUHAN")
 st.markdown("For educational purposes only. © 2025")
 
 
@@ -541,7 +535,7 @@ def half_adder_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("half_adder_diagram.png", caption="Half Adder Circuit Diagram", use_column_width=True)
+    st.image("images/half_adder_diagram.png", caption="Half Adder Circuit Diagram", use_column_width=True)
     
     # Truth Table
     st.write("### Truth Table")
@@ -575,7 +569,7 @@ def half_adder_simulator():
             log_data(inputs, outputs, "Half Adder")
             
         with sim_col2:
-            st.image("half_adder_diagram.png", caption="Half Adder Implementation", use_column_width=True)
+            st.image("images/half_adder_diagram.png", caption="Half Adder Implementation", use_column_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
@@ -599,7 +593,7 @@ def full_adder_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("full_adder_circuit.jpg", caption="Full Adder Circuit Diagram",use_column_width=True)  # Adjust width as needed
+    st.image("images/full_adder_circuit.jpg", caption="Full Adder Circuit Diagram",use_column_width=True)  # Adjust width as needed
     
     # Truth Table
     st.write("### Truth Table")
@@ -650,7 +644,7 @@ def full_adder_simulator():
             log_data(inputs, outputs, "Full Adder")
             
         with sim_col2:
-            st.image("full_adder_circuit.jpg", caption="Full Adder Implementation", use_column_width=True)
+            st.image("images/full_adder_circuit.jpg", caption="Full Adder Implementation", use_column_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
@@ -673,7 +667,7 @@ def half_subtractor_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("half_subtractor_diagram.png", caption="Half Subtractor Circuit Diagram", use_column_width=True)
+    st.image("images/half_subtractor_diagram.png", caption="Half Subtractor Circuit Diagram", use_column_width=True)
     
     # Truth Table
     st.write("### Truth Table")
@@ -707,7 +701,7 @@ def half_subtractor_simulator():
             log_data(inputs, outputs, "Half Subtractor")
             
         with sim_col2:
-            st.image("half_subtractor_diagram.png", caption="Half Subtractor Implementation", use_column_width=True)
+            st.image("images/half_subtractor_diagram.png", caption="Half Subtractor Implementation", use_column_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
@@ -735,7 +729,7 @@ def full_subtractor_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("full_subtractor_diagram.png", caption="Full Subtractor Circuit Diagram", use_column_width=True)
+    st.image("images/full_subtractor_diagram.png", caption="Full Subtractor Circuit Diagram", use_column_width=True)
     
     # Truth Table
     st.write("### Truth Table")
@@ -771,7 +765,7 @@ def full_subtractor_simulator():
             log_data(inputs, outputs, "Full Subtractor")
             
         with sim_col2:
-            st.image("full_subtractor_diagram.png", caption="Full Subtractor Implementation", use_column_width=True)
+            st.image("images/full_subtractor_diagram.png", caption="Full Subtractor Implementation", use_column_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
@@ -781,7 +775,7 @@ def multiplexer_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("multiplexer_curcuit.jpg", caption="Multiplexer Circuit Diagram", use_column_width=True)
+    st.image("images/multiplexer_curcuit.jpg", caption="Multiplexer Circuit Diagram", use_column_width=True)
     
     # Truth Table for a 2:1 MUX
     st.write("### Truth Table (2:1 MUX)")
@@ -814,7 +808,7 @@ def multiplexer_simulator():
             log_data(inputs, outputs, "Multiplexer")
             
         with sim_col2:
-            st.image("multiplexer_curcuit.jpg", caption="Multiplexer Implementation", use_column_width=True)
+            st.image("images/multiplexer_curcuit.jpg", caption="Multiplexer Implementation", use_column_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
@@ -824,7 +818,7 @@ def demultiplexer_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("demultiplexer_curcuit.jpg", caption="Demultiplexer Circuit Diagram", use_column_width=True)
+    st.image("images/demultiplexer_curcuit.jpg", caption="Demultiplexer Circuit Diagram", use_column_width=True)
     
     # Truth Table for a 1:2 DEMUX
     st.write("### Truth Table (1:2 DEMUX)")
@@ -858,7 +852,7 @@ def demultiplexer_simulator():
             log_data(inputs, outputs, "Demultiplexer")
             
         with sim_col2:
-            st.image("demultiplexer_curcuit.jpg", caption="Demultiplexer Implementation", use_column_width=True)
+            st.image("images/demultiplexer_curcuit.jpg", caption="Demultiplexer Implementation", use_column_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
             
@@ -868,7 +862,7 @@ def magnitude_comparator_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("magnitude_comparator.gif", caption="Magnitude Comparator Circuit Diagram", use_column_width=True)
+    st.image("images/magnitude_comparator.gif", caption="Magnitude Comparator Circuit Diagram", use_column_width=True)
     
     # Truth Table for a 2-bit comparator
     st.write("### Truth Table (2-bit Comparator)")
@@ -907,7 +901,7 @@ def magnitude_comparator_simulator():
         with sim_col2:
             # Display the implementation diagram image
             st.write("#### Magnitude Comparator Implementation")
-            st.image("magnitude_comparator.gif", caption="Magnitude Comparator Implementation", use_column_width=True)
+            st.image("images/magnitude_comparator.gif", caption="Magnitude Comparator Implementation", use_column_width=True)
             
 def binary_addition_simulator():
     st.write("### Binary Addition Circuit")
@@ -915,7 +909,7 @@ def binary_addition_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("binary_adder.jpg", caption="Binary Addition Circuit Diagram", use_column_width=True)
+    st.image("images/binary_adder.jpg", caption="Binary Addition Circuit Diagram", use_column_width=True)
     
     # Truth Table for a 1-bit adder
     st.write("### Truth Table (1-bit Adder)")
@@ -951,7 +945,7 @@ def binary_addition_simulator():
         with sim_col2:
             # Display the implementation diagram image
             st.write("#### Binary Addition Implementation")
-            st.image("binary_adder.jpg", caption="Binary Addition Implementation", use_column_width=True)
+            st.image("images/binary_adder.jpg", caption="Binary Addition Implementation", use_column_width=True)
 
 def address_decoder_simulator():
     st.write("### Address Decoder Circuit")
@@ -959,7 +953,7 @@ def address_decoder_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("Address-decoder-curcuit.png", caption="Address Decoder Circuit Diagram", use_column_width=True)
+    st.image("images/Address-decoder-curcuit.png", caption="Address Decoder Circuit Diagram", use_column_width=True)
     
     # Truth Table for a 2-to-4 decoder
     st.write("### Truth Table (2-to-4 Decoder)")
@@ -1001,7 +995,7 @@ def address_decoder_simulator():
         with sim_col2:
             # Display the implementation diagram image
             st.write("#### Address Decoder Implementation")
-            st.image("Address-decoder-curcuit.png", caption="Address Decoder Implementation", use_column_width=True)
+            st.image("images/Address-decoder-curcuit.png", caption="Address Decoder Implementation", use_column_width=True)
                                 
 # Run the selected experiment
 if selected_experiment == "Half Adder":
@@ -1022,8 +1016,6 @@ elif selected_experiment == "Binary Addition":
     binary_addition_simulator()
 elif selected_experiment == "Address Decoder":
     address_decoder_simulator()
-else:
-    st.warning("Please select an experiment from the sidebar.")
 
 # Sequential Circuit Functions
 def sr_latch_nand_simulator():
@@ -1355,8 +1347,6 @@ elif selected_experiment == "Master-Slave JK Flip-Flop":
     master_slave_jk_flip_flop_simulator()
 elif selected_experiment == "Shift Register":
     shift_register_simulator()
-else:
-    st.warning("Please select an experiment from the sidebar.")
     
 # Timer and Multivibrator Functions
 def astable_multivibrator_555():
@@ -1621,13 +1611,13 @@ elif selected_experiment == "BCD Decoder with 7-Segment Display":
     
 # Load logic gate images
 gate_images = {
-    "AND": "and.png",
-    "OR": "or.png",
-    "XOR": "xor.png",
-    "NAND": "nand.png",
-    "NOR": "nor.png",
-    "XNOR": "xnor.png",
-    "NOT": "not.png"
+    "AND": "images/AND.png",
+    "OR": "images/OR.png",
+    "XOR": "images/XOR.png",
+    "NAND": "images/NAND.png",
+    "NOR": "images/NOR.png",
+    "XNOR": "images/XNOR.png",
+    "NOT": "images/not.png"
 }
 
 # Logic Gate Functions
@@ -1772,8 +1762,10 @@ with col2:
     # **Display Gate Images**
     for node in st.session_state.nodes:
         if st.session_state.nodes[node] in gate_images:
-            st.image(gate_images[st.session_state.nodes[node]], caption=f"{node}")
+            image_path = gate_images[st.session_state.nodes[node]]
+            if os.path.exists(image_path):
+                st.image(image_path, caption=f"{node}")
+            else:
+                st.warning(f"⚠️ Image not found for {node}")
 
-# **Display Circuit Output**
-st.subheader("🖥️ Circuit Output")
-st.write(output_values)
+
