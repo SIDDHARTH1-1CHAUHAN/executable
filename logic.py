@@ -518,9 +518,6 @@ st.markdown("---")
 st.markdown("For educational purposes only. © 2025")
 
 
-# Combinational Circuit Functions
-import streamlit as st
-import pandas as pd
 
 # Assuming XOR_gate and AND_gate are defined elsewhere
 def XOR_gate(a, b):
@@ -535,7 +532,7 @@ def half_adder_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("images/half_adder_diagram.png", caption="Half Adder Circuit Diagram", use_column_width=True)
+    st.image("images/half_adder_diagram.png", caption="Half Adder Circuit Diagram", use_container_width=True)
     
     # Truth Table
     st.write("### Truth Table")
@@ -569,13 +566,11 @@ def half_adder_simulator():
             log_data(inputs, outputs, "Half Adder")
             
         with sim_col2:
-            st.image("images/half_adder_diagram.png", caption="Half Adder Implementation", use_column_width=True)
+            st.image("images/half_adder_diagram.png", caption="Half Adder Implementation", use_container_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
 
-import streamlit as st
-import pandas as pd
 
 # Assuming XOR_gate, AND_gate, and OR_gate are defined elsewhere
 def XOR_gate(a, b):
@@ -593,7 +588,7 @@ def full_adder_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("images/full_adder_circuit.jpg", caption="Full Adder Circuit Diagram",use_column_width=True)  # Adjust width as needed
+    st.image("images/full_adder_circuit.png", caption="Full Adder Circuit Diagram",use_container_width=True)  # Adjust width as needed
     
     # Truth Table
     st.write("### Truth Table")
@@ -644,12 +639,10 @@ def full_adder_simulator():
             log_data(inputs, outputs, "Full Adder")
             
         with sim_col2:
-            st.image("images/full_adder_circuit.jpg", caption="Full Adder Implementation", use_column_width=True)
+            st.image("images/full_adder_circuit.jpg", caption="Full Adder Implementation", use_container_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
-import streamlit as st
-import pandas as pd
 
 # Assuming XOR_gate, AND_gate, and NOT_gate are defined elsewhere
 def XOR_gate(a, b):
@@ -667,7 +660,7 @@ def half_subtractor_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("images/half_subtractor_diagram.png", caption="Half Subtractor Circuit Diagram", use_column_width=True)
+    st.image("images/half_subtractor_diagram.png", caption="Half Subtractor Circuit Diagram", use_container_width=True)
     
     # Truth Table
     st.write("### Truth Table")
@@ -701,14 +694,11 @@ def half_subtractor_simulator():
             log_data(inputs, outputs, "Half Subtractor")
             
         with sim_col2:
-            st.image("images/half_subtractor_diagram.png", caption="Half Subtractor Implementation", use_column_width=True)
+            st.image("images/half_subtractor_diagram.png", caption="Half Subtractor Implementation", use_container_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
 
-
-import streamlit as st
-import pandas as pd
 
 # Assuming XOR_gate, AND_gate, OR_gate, and NOT_gate are defined elsewhere
 def XOR_gate(a, b):
@@ -729,7 +719,7 @@ def full_subtractor_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("images/full_subtractor_diagram.png", caption="Full Subtractor Circuit Diagram", use_column_width=True)
+    st.image("images/full_subtractor_diagram.png", caption="Full Subtractor Circuit Diagram", use_container_width=True)
     
     # Truth Table
     st.write("### Truth Table")
@@ -765,7 +755,7 @@ def full_subtractor_simulator():
             log_data(inputs, outputs, "Full Subtractor")
             
         with sim_col2:
-            st.image("images/full_subtractor_diagram.png", caption="Full Subtractor Implementation", use_column_width=True)
+            st.image("images/full_subtractor_diagram.png", caption="Full Subtractor Implementation", use_container_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
@@ -775,7 +765,7 @@ def multiplexer_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("images/multiplexer_curcuit.jpg", caption="Multiplexer Circuit Diagram", use_column_width=True)
+    st.image("images/multiplexer_curcuit.png", caption="Multiplexer Circuit Diagram", use_container_width=True)
     
     # Truth Table for a 2:1 MUX
     st.write("### Truth Table (2:1 MUX)")
@@ -808,7 +798,7 @@ def multiplexer_simulator():
             log_data(inputs, outputs, "Multiplexer")
             
         with sim_col2:
-            st.image("images/multiplexer_curcuit.jpg", caption="Multiplexer Implementation", use_column_width=True)
+            st.image("images/multiplexer_curcuit.jpg", caption="Multiplexer Implementation", use_container_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
@@ -818,7 +808,7 @@ def demultiplexer_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("images/demultiplexer_curcuit.jpg", caption="Demultiplexer Circuit Diagram", use_column_width=True)
+    st.image("images/demultiplexer_curcuit.png", caption="Demultiplexer Circuit Diagram", use_container_width=True)
     
     # Truth Table for a 1:2 DEMUX
     st.write("### Truth Table (1:2 DEMUX)")
@@ -852,7 +842,7 @@ def demultiplexer_simulator():
             log_data(inputs, outputs, "Demultiplexer")
             
         with sim_col2:
-            st.image("images/demultiplexer_curcuit.jpg", caption="Demultiplexer Implementation", use_column_width=True)
+            st.image("images/demultiplexer_curcuit.jpg", caption="Demultiplexer Implementation", use_container_width=True)
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
             
@@ -862,7 +852,7 @@ def magnitude_comparator_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("images/magnitude_comparator.gif", caption="Magnitude Comparator Circuit Diagram", use_column_width=True)
+    st.image("images/magnitude_comparator.png", caption="Magnitude Comparator Circuit Diagram", use_container_width=True)
     
     # Truth Table for a 2-bit comparator
     st.write("### Truth Table (2-bit Comparator)")
@@ -901,7 +891,7 @@ def magnitude_comparator_simulator():
         with sim_col2:
             # Display the implementation diagram image
             st.write("#### Magnitude Comparator Implementation")
-            st.image("images/magnitude_comparator.gif", caption="Magnitude Comparator Implementation", use_column_width=True)
+            st.image("images/magnitude_comparator.png", caption="Magnitude Comparator Implementation", use_container_width=True)
             
 def binary_addition_simulator():
     st.write("### Binary Addition Circuit")
@@ -909,7 +899,7 @@ def binary_addition_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("images/binary_adder.jpg", caption="Binary Addition Circuit Diagram", use_column_width=True)
+    st.image("images/binary_addition.jpg", caption="Binary Addition Circuit Diagram", use_container_width=True)
     
     # Truth Table for a 1-bit adder
     st.write("### Truth Table (1-bit Adder)")
@@ -945,7 +935,7 @@ def binary_addition_simulator():
         with sim_col2:
             # Display the implementation diagram image
             st.write("#### Binary Addition Implementation")
-            st.image("images/binary_adder.jpg", caption="Binary Addition Implementation", use_column_width=True)
+            st.image("images/binary_adder.jpg", caption="Binary Addition Implementation", use_container_width=True)
 
 def address_decoder_simulator():
     st.write("### Address Decoder Circuit")
@@ -953,7 +943,7 @@ def address_decoder_simulator():
     
     # Display the circuit diagram image
     st.write("#### Circuit Diagram")
-    st.image("images/Address-decoder-curcuit.png", caption="Address Decoder Circuit Diagram", use_column_width=True)
+    st.image("images/Address-decoder-circuit.png", caption="Address Decoder Circuit Diagram", use_container_width=True)
     
     # Truth Table for a 2-to-4 decoder
     st.write("### Truth Table (2-to-4 Decoder)")
@@ -995,7 +985,7 @@ def address_decoder_simulator():
         with sim_col2:
             # Display the implementation diagram image
             st.write("#### Address Decoder Implementation")
-            st.image("images/Address-decoder-curcuit.png", caption="Address Decoder Implementation", use_column_width=True)
+            st.image("images/Address-decoder-circuit.png", caption="Address Decoder Implementation", use_container_width=True)
                                 
 # Run the selected experiment
 if selected_experiment == "Half Adder":
@@ -1021,12 +1011,23 @@ elif selected_experiment == "Address Decoder":
 def sr_latch_nand_simulator():
     st.write("### SR Latch using NAND Gates")
     st.info("The SR Latch is a basic memory element built using cross-coupled NAND gates.")
+   
     
     # State tracking
     if "q_state" not in st.session_state:
         st.session_state.q_state = 1
         st.session_state.q_not_state = 0
     
+
+
+
+# st.write("#### Circuit Diagram")
+# image_path = "images\SR_Latch_using_NAND_Gates.png"
+# if os.path.exists(image_path):
+#     st.image(image_path, caption="Demultiplexer Circuit Diagram", use_container_width=True)
+# else:
+#     st.error(f"⚠️ Image file not found at: {os.path.abspath(image_path)}")
+
     # Truth Table
     st.write("### Truth Table")
     truth_df = pd.DataFrame([
@@ -1080,13 +1081,28 @@ def sr_latch_nand_simulator():
             ```
             """)
             st.write("Note: NAND-based SR Latch uses active-low inputs")
+            # Display the circuit diagram image
+            st.write("#### Circuit Diagram")
+            st.image("images/SR_Latch_using_NAND_Gates.png", caption="Half Adder Circuit Diagram", use_container_width=True)
+            if os.path.exists(image_path):
+              st.image(image_path, caption="Demultiplexer Circuit Diagram", use_container_width=True)
+            else:
+              st.error(f"⚠️ Image file not found at: {os.path.abspath(image_path)}") 
             st.plotly_chart(plot_input_wave(), use_container_width=True)
             st.plotly_chart(plot_output_wave(), use_container_width=True)
 
 def sr_latch_nor_simulator():
     st.write("### SR Latch using NOR Gates")
     st.info("The SR Latch is a basic memory element built using cross-coupled NOR gates.")
-    
+    st.write("#### Circuit Diagram")
+    image_path = "images\SR_Latch_using_NOR_Gates.png"
+    if os.path.exists(image_path):
+        st.image(image_path, caption="Demultiplexer Circuit Diagram", use_container_width=True)
+    else:
+        st.error(f"⚠️ Image file not found at: {os.path.abspath(image_path)}")
+
+
+
     # State tracking
     if "q_state" not in st.session_state:
         st.session_state.q_state = 0
